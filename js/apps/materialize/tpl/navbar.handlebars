@@ -1,0 +1,31 @@
+<nav>
+<div class="nav-wrapper">
+	<a href="#" class="brand-logo">Materialize-<span>{{module}}</span></a>
+	<a href="#" data-activates="sr-collapse" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+	<ul class="right hide-on-med-and-down">
+		<li><a class="dropdown-button" href="#" data-activates="dropdown-css">{{css.label}}<i class="mdi-navigation-arrow-drop-down right"></i></a></li>
+		<li><a class="dropdown-button" href="#" data-activates="dropdown-components">{{components.label}}<i class="mdi-navigation-arrow-drop-down right"></i></a></li>
+		<li><a class="dropdown-button" href="#" data-activates="dropdown-js">{{javascript.label}}<i class="mdi-navigation-arrow-drop-down right"></i></a></li>
+	</ul>
+	<ul class="side-nav" id="sr-collapse">
+		{{#each side}}
+		<li {{#eq module ../module}}class="active"{{/eq}}><a href="{{link}}">{{label}}</a></li>
+		{{/each}}
+	</ul>
+</div>
+</nav>
+<ul id="dropdown-css" class="dropdown-content">
+	{{#each css.items}}
+	<li {{#eq module ../module}}class="active"{{/eq}}><a href="{{link}}">{{label}}</a></li>
+	{{/each}}
+</ul>
+<ul id="dropdown-components" class="dropdown-content">
+	{{#each components.items}}
+	<li {{#eq module ../module}}class="active"{{/eq}}><a href="{{link}}">{{label}}</a></li>
+	{{/each}}
+</ul>
+<ul id="dropdown-js" class="dropdown-content">
+	{{#each javascript.items}}
+	<li {{#eq module ../module}}class="active"{{/eq}}><a href="{{link}}">{{label}}</a></li>
+	{{/each}}
+</ul>
